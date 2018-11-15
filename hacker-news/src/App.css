@@ -1,0 +1,32 @@
+.App{
+  height: 100vh;
+  text-align: center;
+  display:grid;
+  grid-template: 1fr 1fr 8fr 1fr/5fr 2fr;
+  grid-template-areas:
+  'header span'
+  'nav nav'
+  'main sidebar'
+  'footer footer';
+  background-image:url('https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_960_720.jpg');
+  
+}
+
+header{
+  grid-area:header;
+padding-top:1%;
+padding-bottom: 1%;
+  background-color: blueviolet
+}
+footer{
+  grid-area:footer;
+  /* background-color: aquamarine */
+}
+span {
+  grid-area: span;
+  background-color: indianred;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+}
