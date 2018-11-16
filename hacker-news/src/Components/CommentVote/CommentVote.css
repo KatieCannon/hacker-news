@@ -1,0 +1,19 @@
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    background-color:tomato;
+  }
+
+.up {
+    transform: rotate(-135deg);
+   
+}
+.comment{
+    background-color :tomato;
+    border:solid tomato;
+}
+ .down {
+    transform: rotate(45deg);
+ }

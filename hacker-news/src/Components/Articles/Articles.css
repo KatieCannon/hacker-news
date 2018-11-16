@@ -1,7 +1,8 @@
 .main{
     grid-area: main;
-   background-color: palevioletred
+   background-color: tomato;
     /* background-image:linear-gradient(orange 20%,yellow 40vh,green 50vh, blue 80%); */
+    /* background-image:url('https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_960_720.jpg') */
 }
 p{
     width: 80%;
@@ -10,4 +11,8 @@ p{
     box-shadow: 0 2px 3px;
     padding: 10px;
     text-align: center;
+    background-color:tomato;
+    /* background-blend-mode: lighten; */
+    text-decoration-color: black;
+    /* background-color:goldenrod */
 }

@@ -1,6 +1,6 @@
 nav{
     grid-area: nav;
-    background-color: coral;
+    background-color: black;
     text-align: left
 }
 .navbar a {
@@ -29,7 +29,7 @@ nav{
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color:tomato;
 }
 
 .dropdown-content {

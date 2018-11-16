@@ -15,7 +15,7 @@ class Auth extends Component{
             <form onSubmit = {this.handleSubmit}>
                 <label htmlFor='username'></label>
                 <input id ='username' type = 'text' onChange = {this.handleChange}></input>
-                <button>Login</button>
+                <button class ="login">Login</button>
             </form>
         )
     }

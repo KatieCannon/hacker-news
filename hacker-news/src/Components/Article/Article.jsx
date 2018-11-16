@@ -22,7 +22,12 @@ class Article extends Component {
           <br />
           <br />
           created by: {this.state.created_by.name}
-          <br />
+          <br /><ArticleVote
+            votes={this.state.article.votes}
+            article={this.state.article}
+            _id={this.state.article._id}
+            section={"articles"}
+          /><br/>
           Comments: {this.state.article.commentCount}
           <br />
           <CommentAdder
@@ -30,6 +35,8 @@ class Article extends Component {
             addNewComment={this.addNewComment}
             article={this.state.article}
           />
+          
+          <br/>
           {this.state.articleComments.map(comment => {
             let commentBy = comment.created_by;
             return (
@@ -37,8 +44,8 @@ class Article extends Component {
                 {" "}
                 <>{comment.body}</>
                 <br />
-                 <>written by:{commentBy.name}</> 
-                 <button onClick={()=>this.removeComment(comment)}>Delete Comment</button>
+                 <>written by:{commentBy.name}</> <br/>
+                 <button onClick={()=>this.removeComment(comment)}>Delete Comment</button><br/>
                 <CommentVote
                   votes={comment.votes}
                   article={this.state.article}
@@ -49,12 +56,7 @@ class Article extends Component {
               </p>
             );
           })}
-          <ArticleVote
-            votes={this.state.article.votes}
-            article={this.state.article}
-            _id={this.state.article._id}
-            section={"articles"}
-          />
+          
         </span>
       </div>
     );
