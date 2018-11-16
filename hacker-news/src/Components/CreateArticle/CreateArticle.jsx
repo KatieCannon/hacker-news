@@ -12,11 +12,11 @@ class CreateArticle extends Component {
     console.log(this.props);
     return (
       <form onSubmit={this.createArticle}>
-        <label htmlFor="title">Title:</label>
+        <label className ='createArticle' htmlFor="title">Title:</label>
         <input  type="text" name="title" onChange={this.handleChange} />
-        <label htmlFor="topic">Topic:</label>
+        <label className ='createArticle' htmlFor="topic">Topic:</label>
         <input type="text" name="belongs_to" onChange={this.handleChange} />
-        <label htmlFor="contents">Contents</label>
+        <label className ='createArticle' htmlFor="contents">Contents</label>
         <textarea type="text" name="body" onChange={this.handleChange} />
         <button>Create Article</button>
       </form>

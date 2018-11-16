@@ -12,7 +12,7 @@ class Navbar extends Component {
     return (
         <nav>
             <div className="navbar">
-            <Link to = '/' onClick = {this.handleHome}>Home</Link>
+            <Link to = '/' onClick = {this.handleHome} className='home'>Home</Link>
   {/* <a href="#home">Home</a>
   <a href="#news">News</a> */}
   <div className="dropdown">

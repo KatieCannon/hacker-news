@@ -1,9 +1,9 @@
 .arrow {
-    border: solid black;
+    border: solid #e7dfdd;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
-    background-color:tomato;
+    /* background-color:#4717f6; */
   }
 
 .up {
@@ -11,9 +11,13 @@
    
 }
 .comment{
-    background-color :tomato;
-    border:solid tomato;
+    background-color :#a239ca;
+    border:solid #a239ca;
 }
  .down {
     transform: rotate(45deg);
+ }
+
+ .commentVote{
+     background-color:#a239ca;
  }

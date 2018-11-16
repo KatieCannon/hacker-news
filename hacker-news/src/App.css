@@ -8,6 +8,8 @@
     "nav nav"
     "main sidebar"
     "footer footer";
+    background-color:#0e0b16;
+    
 
   /* background-image:url('https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_960_720.jpg'); */
 }
@@ -24,16 +26,21 @@ header {
   grid-area: header;
   padding-top: 1%;
   padding-bottom: 1%;
-  background-color: tomato;
+  background-color:#0e0b16;
+
 }
 footer {
   grid-area: footer;
+  background-color: #0e0b16;
   /* background-color: aquamarine */
 }
-span {
+span{
   grid-area: span;
-  background-color: tomato;
+  background-color:#0e0b16;
   display: flex;
   flex-flow: column;
-  justify-content: center;
+  justify-content: center; 
+}
+.footer{
+  color:#e7dfdd
 }

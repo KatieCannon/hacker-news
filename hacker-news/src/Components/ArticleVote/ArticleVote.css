@@ -1,20 +1,24 @@
 .arrow {
-    border: solid black;
+    border: solid #e7e7e7;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
-    background-color:tomato;
+    /* background-color; */
   }
 
-.up {
+Article.up {
     transform: rotate(-135deg);
 }
 .articleVote{
-    background-color :tomato;
-    border:solid tomato;
+    background-color :#a239ca;
+    border:solid #a239ca;
     
 
 }
  .down {
     transform: rotate(45deg);
+    }
+    span{
+        color:#0e0b16;
+        background-color:#a239ca;
     }

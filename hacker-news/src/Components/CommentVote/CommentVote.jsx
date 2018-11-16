@@ -19,7 +19,7 @@ class CommentVote extends Component {
         <i class="arrow up"></i></>
           {/* like */}
         </button>
-        <span>{`votes:${this.state.updatedVoteCount
+        <span className='commentVote'>{`votes:${this.state.updatedVoteCount
             ? this.state.updatedVoteCount
             : this.state.orginalVoteCount}`}</span>
         <button class = "comment"

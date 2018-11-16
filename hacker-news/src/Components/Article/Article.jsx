@@ -3,6 +3,7 @@ import * as api from "../../Api";
 import ArticleVote from "../ArticleVote/ArticleVote";
 import CommentAdder from "../CommentAdder/CommentAdder";
 import CommentVote from "../CommentVote/CommentVote";
+import '../Article/Article.css'
 
 class Article extends Component {
   state = {
@@ -14,14 +15,19 @@ class Article extends Component {
     console.log(this.state.articleComments, "comments");
     return (
       <div>
-        <span>
+        <span><p>
+
           {this.state.article.title}
+        
           <br />
           <br />
+          
+
           {this.state.article.body}
-          <br />
-          <br />
+          <br/>
           created by: {this.state.created_by.name}
+
+        
           <br /><ArticleVote
             votes={this.state.article.votes}
             article={this.state.article}
@@ -30,6 +36,7 @@ class Article extends Component {
           /><br/>
           Comments: {this.state.article.commentCount}
           <br />
+          </p>
           <CommentAdder
             user={this.props.user}
             addNewComment={this.addNewComment}

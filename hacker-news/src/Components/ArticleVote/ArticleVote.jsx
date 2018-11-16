@@ -22,7 +22,7 @@ class ArticleVote extends Component {
             <i class="arrow up" />
           </>
         </button>
-        <span>{`votes:${
+        <span className='articleData'>{`votes:${
           this.state.updatedVoteCount
             ? this.state.updatedVoteCount
             : this.props.article.votes

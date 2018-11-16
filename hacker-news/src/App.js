@@ -9,7 +9,7 @@ import Auth from "./Components/Auth/Auth";
 import User from "./Components/User/User";
 import Article from "./Components/Article/Article";
 import * as api from "../src/Api";
-
+// import 'bootstrap/dist/css/bootstrap.css'
 
 class App extends Component {
   state = {
@@ -25,11 +25,11 @@ class App extends Component {
         </header>
 
         <Navbar setTopic={this.setTopic} getHome={this.getHome} />
-        <span>
-          <Auth login={this.login} user={this.state.user}>
+        
+          <Auth className='span' login={this.login} user={this.state.user}>
+          <span>
             <User user={this.state.user} logout={this.logout} />
-          </Auth>
-        </span>
+            </span>
 
         <Router className="main">
           <Articles path="/" topic={this.state.topic} user={this.state.user} />
@@ -40,8 +40,9 @@ class App extends Component {
           />
           <Article path="/articles/:id" user={this.state.user} />
         </Router>
-        <Sidebar />
-        <footer>Copyright Katie Cannon</footer>
+        <Sidebar /></Auth>
+        
+        <footer className='footer'>Copyright Katie Cannon</footer>
       </div>
     );
   }

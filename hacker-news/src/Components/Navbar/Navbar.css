@@ -1,15 +1,18 @@
 nav{
     grid-area: nav;
-    background-color: black;
-    text-align: left
+    background-color:#a239ca;
+    text-align: left;
+   
+    
 }
 .navbar a {
     float: left;
     font-size: 16px;
-    color: white;
+    color:0e0b16;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    
 }
 
 .dropdown {
@@ -21,7 +24,7 @@ nav{
     font-size: 16px;    
     border: none;
     outline: none;
-    color: white;
+    color:#0e0b16;
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
@@ -29,13 +32,13 @@ nav{
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color:tomato;
+    background-color:#a239ca;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #a239ca;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -43,7 +46,7 @@ nav{
 
 .dropdown-content a {
     float: none;
-    color: black;
+    color:#0e0b16;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -51,9 +54,12 @@ nav{
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color:#e7dfdd;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+.home{
+    color:#0e0b16;
 }

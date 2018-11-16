@@ -22,14 +22,17 @@ class Articles extends Component {
           const creator = article.created_by
           return (
             <p key={article._id}>
-              <Link to={`/articles/${article._id}`} id={article._id}>
+              <Link to={`/articles/${article._id}`} className ='articleTitle'id={article._id}>
                 {article.title}
               </Link><br/>
-              <ArticleVote
+              
+              <ArticleVote 
                 article={article}
                 _id={article._id}
                 section={"articles"}
               />
+
+              
               <br/>
 <>Author :{creator.name}</>
             </p>

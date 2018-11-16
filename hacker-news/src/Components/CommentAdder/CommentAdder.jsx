@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import '../CommentAdder/CommentAdder.css'
 
  class CommentAdder extends Component {
   state = {
@@ -9,7 +10,7 @@ import React, { Component } from "react";
       <>
         <label htmlFor="comment">AddComment:</label>
         <input  type="text" name="body"  onChange={this.handleChange} />
-        <button onClick={this.handleSubmit}>Add Comment</button>
+        <button className ='adder' onClick={this.handleSubmit}>Add Comment</button>
       </>
     );
   }
