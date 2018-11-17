@@ -1,24 +1,23 @@
 .arrow {
-    border: solid #e7e7e7;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    /* background-color; */
-  }
-
-Article.up {
-    transform: rotate(-135deg);
+  border: solid #e7e7e7;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
 }
-.articleVote{
-    background-color :#a239ca;
-    border:solid #a239ca;
-    
 
+article.up {
+  transform: rotate(-135deg);
 }
- .down {
-    transform: rotate(45deg);
-    }
-    span{
-        color:#0e0b16;
-        background-color:#a239ca;
-    }
+.articleVote {
+  background-color: rgba(0, 0, 0, 0.007);
+  border: rgba(0, 0, 0, 0.007);
+}
+
+.down {
+  transform: rotate(45deg);
+}
+
+.articleData {
+  color: #e7dfdd;
+  background-color: rgba(0, 0, 0, 0.007);
+}

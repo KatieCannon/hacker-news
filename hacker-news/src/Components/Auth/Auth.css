@@ -1,27 +1,9 @@
-form{
-    background-color: #0e0b16;
+form {
+  background-color: #0e0b16;
 }
-/* .login{
-    /* background-color:#4717f6;
-    border:solid black; */
-    
-/* } */ 
-
-/* .input{
-    /* background-color: black; */
-    
-    /* flex-flow: row nowrap;
-    justify-content: space-evenly;
-    align-items: center; */
-    /* grid-area: span;  */
-    
-     /* display: flex;
-    /* flex-flow: column;  */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* display: flex; */
-    /* flex-flow: row nowrap; */
-    /* justify-content: space-evenly;  */
-    /* align-items: center; */
-    /* margin: 10% */
-/* }  */
+Auth {
+  background-color: #0e0b16;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}

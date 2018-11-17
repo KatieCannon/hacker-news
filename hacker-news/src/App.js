@@ -9,40 +9,31 @@ import Auth from "./Components/Auth/Auth";
 import User from "./Components/User/User";
 import Article from "./Components/Article/Article";
 import * as api from "../src/Api";
-// import 'bootstrap/dist/css/bootstrap.css'
+import Greeting from "./Components/Greeting/Greeting";
 
 class App extends Component {
   state = {
     user: null,
-    topic: null
+    loading: true
   };
   render() {
-    console.log(this.state.topic);
     return (
       <div className="App">
         <header>
           <Title />
         </header>
-
         <Navbar setTopic={this.setTopic} getHome={this.getHome} />
-        
-          <Auth className='span' login={this.login} user={this.state.user}>
-          <span>
-            <User user={this.state.user} logout={this.logout} />
-            </span>
-
-        <Router className="main">
-          <Articles path="/" topic={this.state.topic} user={this.state.user} />
-          <Articles
-            path="/:topic_slug"
-            topic={this.state.topic}
-            user={this.state.user}
-          />
-          <Article path="/articles/:id" user={this.state.user} />
-        </Router>
-        <Sidebar /></Auth>
-        
-        <footer className='footer'>Copyright Katie Cannon</footer>
+        <Auth className="span" login={this.login} user={this.state.user}>
+          <User user={this.state.user} logout={this.logout} />
+          <Router className="main">
+            <Articles path="/" user={this.state.user} />
+            <Articles path="/:topic_slug" user={this.state.user} />
+            <Article path="/articles/:id" user={this.state.user} />
+          </Router>
+          <Sidebar />
+        </Auth>
+        {!this.state.user ? <Greeting /> : <></>}
+        <footer className="footer">Copyright Katie Cannon</footer>
       </div>
     );
   }

@@ -1,38 +1,44 @@
 import React, { Component } from "react";
-import '../CommentAdder/CommentAdder.css'
+import "../CommentAdder/CommentAdder.css";
 
- class CommentAdder extends Component {
+class CommentAdder extends Component {
   state = {
-    body: ""
+    body: "",
+    belongs_to: ""
   };
   render() {
     return (
       <>
-        <label htmlFor="comment">AddComment:</label>
-        <input  type="text" name="body"  onChange={this.handleChange} />
-        <button className ='adder' onClick={this.handleSubmit}>Add Comment</button>
+        <label htmlFor="comment">Comment as {this.props.user.username}</label>
+        <input
+          type="text"
+          name="body"
+          onChange={this.handleChange}
+          value={this.state.body}
+        />
+        <button className="adder" onClick={this.handleSubmit}>
+          Add Comment
+        </button>
       </>
     );
   }
   handleChange = event => {
     this.setState({
-      body: event.target.value
+      body: event.target.value,
+      belongs_to: this.props.id
     });
   };
-  handleSubmit = event => {
-    console.log(this.props.user._id, "commentuser");
-    event.preventDefault();
-    const newArticle = this.state;
 
-    newArticle.created_by = this.props.user._id;
-    console.log(newArticle, "new");
-    this.props.addNewComment(this.props.article._id, newArticle)
+  handleSubmit = event => {
+    event.preventDefault();
+    const newComment = { ...this.state };
+    newComment.created_by = this.props.user._id;
+    this.props.addNewComment(this.props.id, newComment);
     this.setState({
-      body: ""
-    })
+      body: "",
+      belongs_to: ""
+    });
   };
- 
-    
 }
 
 export default CommentAdder;

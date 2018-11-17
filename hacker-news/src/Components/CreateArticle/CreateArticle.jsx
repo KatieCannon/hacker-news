@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import * as api from '..//../Api'
-import './CreateArticle.css'
+import "./CreateArticle.css";
 
 class CreateArticle extends Component {
   state = {
@@ -9,21 +8,57 @@ class CreateArticle extends Component {
     belongs_to: ""
   };
   render() {
-    console.log(this.props);
     return (
       <form onSubmit={this.createArticle}>
-        <label className ='createArticle' htmlFor="title">Title:</label>
-        <input  type="text" name="title" onChange={this.handleChange} />
-        <label className ='createArticle' htmlFor="topic">Topic:</label>
-        <input type="text" name="belongs_to" onChange={this.handleChange} />
-        <label className ='createArticle' htmlFor="contents">Contents</label>
-        <textarea type="text" name="body" onChange={this.handleChange} />
+        <label className="createArticle" htmlFor="title">
+          Title:
+        </label>
+        <input
+          type="text"
+          name="title"
+          value={this.state.title}
+          onChange={this.handleChange}
+        />
+        <label className="createArticle" htmlFor="topic">
+          Topic:
+        </label>
+        <select value={this.state.belongs_to} onChange={this.handleSelect}>
+          <option>{this.state.belongs_to}</option>
+          <option name="belongs_to" value="football">
+            football
+          </option>
+          <option name="belongs_to" value="coding">
+            coding
+          </option>
+          <option name="belongs_to" value="cooking">
+            cooking
+          </option>
+        </select>
+        <label
+          className="createArticle"
+          htmlFor="contents"
+          value={this.state.body}
+        >
+          Contents
+        </label>
+        <textarea
+          type="text"
+          name="body"
+          onChange={this.handleChange}
+          value={this.state.body}
+        />
         <button>Create Article</button>
       </form>
     );
   }
 
+  handleSelect = event => {
+    this.setState({
+      belongs_to: event.target.value
+    });
+  };
   handleChange = event => {
+    event.preventDefault();
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -31,10 +66,15 @@ class CreateArticle extends Component {
 
   createArticle = event => {
     event.preventDefault();
-    const newArticle = this.state;
+    const newArticle = { ...this.state };
 
     newArticle.created_by = this.props.user._id;
     this.props.makeArticle(newArticle);
+    this.setState({
+      title: "",
+      body: "",
+      belongs_to: ""
+    });
   };
 }
 

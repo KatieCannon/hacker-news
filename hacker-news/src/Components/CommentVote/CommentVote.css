@@ -11,13 +11,17 @@
    
 }
 .comment{
-    background-color :#a239ca;
-    border:solid #a239ca;
+    /* background-color :#a239ca;
+    border:solid #a239ca; */
+    background-color:rgba(0, 0, 0, 0.007);   
+    border:rgba(0, 0, 0, 0.007);
 }
  .down {
     transform: rotate(45deg);
  }
 
  .commentVote{
-     background-color:#a239ca;
+     /* background-color:#a239ca; */
+     background-color:rgba(0, 0, 0, 0.007);   
+    border:rgba(0, 0, 0, 0.007);
  }

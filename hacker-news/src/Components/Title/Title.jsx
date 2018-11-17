@@ -1,10 +1,9 @@
-import React from 'react';
-import '../Title/Title.css'
+import React from "react";
+import { Link } from "@reach/router";
+import "../Title/Title.css";
 
 const Title = () => {
-    return (
-        <h1>NorthCoder-News</h1>
-    )
-}
+  return <Link to={"/"}>NorthCoder-News</Link>;
+};
 
 export default Title;

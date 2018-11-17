@@ -32,17 +32,15 @@ export const vote = async (_id, section, direction) => {
 };
 
 export const postArticle = async newArticle => {
-  console.log(newArticle);
   const { data } = await axios.post(
     `${BASE_URL}/topics/${newArticle.belongs_to}/articles`,
     newArticle
   );
-  return data;
+  return data.article;
 };
 
 export const getArticleComments = async id => {
   const { data } = await axios.get(`${BASE_URL}/articles/${id}/comments`);
-  console.log(data.comments, "data");
   return data.comments;
 };
 
@@ -51,11 +49,10 @@ export const addComment = async (id, newComment) => {
     `${BASE_URL}/articles/${id}/comments`,
     newComment
   );
-  console.log(data, "now");
-  return data;
+  return data.comment;
 };
 
-export const deleteComment = async(id) => {
-  const {data} = await axios.delete(`${BASE_URL}/comments/${id}`)
-  return data
-}
+export const deleteComment = async id => {
+  const { data } = await axios.delete(`${BASE_URL}/comments/${id}`);
+  return data;
+};

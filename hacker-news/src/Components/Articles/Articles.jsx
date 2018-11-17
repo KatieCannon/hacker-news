@@ -4,65 +4,70 @@ import * as api from "../../Api";
 import { Link } from "@reach/router";
 import ArticleVote from "../ArticleVote/ArticleVote";
 import CreateArticle from "../CreateArticle/CreateArticle";
+import Loader from "../Loader/Loader";
 
 class Articles extends Component {
   state = {
-    articles: []
+    articles: [],
+    loading: true
   };
   render() {
-    // console.log(this.state.articles)
-    return (
+    console.log(this.state.articles);
+    return this.state.loading ? (
+      <Loader />
+    ) : (
       <main>
-        <CreateArticle
-          makeArticle={this.makeArticle}
-          user={this.props.user}
-          add
-        />
+        <CreateArticle makeArticle={this.makeArticle} user={this.props.user} />
         {this.state.articles.map(article => {
-          const creator = article.created_by
+          const creator = article.created_by;
           return (
             <p key={article._id}>
-              <Link to={`/articles/${article._id}`} className ='articleTitle'id={article._id}>
+              <Link
+                to={`/articles/${article._id}`}
+                className="articleTitle"
+                id={article._id}
+              >
                 {article.title}
-              </Link><br/>
-              
-              <ArticleVote 
+              </Link>
+              <section className="author">Author :{creator.name}</section>
+              <ArticleVote
                 article={article}
                 _id={article._id}
                 section={"articles"}
               />
-
-              
-              <br/>
-<>Author :{creator.name}</>
             </p>
           );
         })}
       </main>
     );
   }
+
   componentDidMount = () => {
     this.fetchArticles();
   };
+
   fetchArticles = () => {
-    if (this.props.topic === null)
+    if (!this.props.topic_slug) {
+      console.log(this.props.topic_slug);
       api.getArticles().then(articles => {
         this.setState({
-          articles: articles.filter(article => article.commentCount > 10)
-        });
-      });
-  };
-  componentDidUpdate = prevProps => {
-    if (prevProps.topic !== this.props.topic && this.props.topic !== null) {
-      api.getArticlesByTopic(this.props.topic).then(articles => {
-        this.setState({
-          articles
+          articles: articles.filter(article => article.commentCount > 10),
+          loading: !true
         });
       });
     } else {
-      if (prevProps.topic !== this.props.topic && this.props.topic === null) {
-        this.fetchArticles();
-      }
+      api.getArticlesByTopic(this.props.topic_slug).then(articles => {
+        this.setState({
+          articles,
+          loading: !true
+        });
+      });
+    }
+  };
+
+  componentDidUpdate = prevProps => {
+    if (prevProps.topic_slug !== this.props.topic_slug) {
+      this.fetchArticles();
     }
   };
 
