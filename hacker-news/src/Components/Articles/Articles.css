@@ -1,8 +1,9 @@
 .main {
   grid-area: main;
-  background-color: #0e0b16;
+  /* background-color: #0e0b16; */
   /* background-image:linear-gradient(#0e0b16 10%,#a239ca 40vh,green 50vh, blue 80%); */
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9aPmGsj0tLjGCAu2qt2FsO6AzgBxtFLMIVRp-HrctZ5OJg2BEiw");
+  background-image: url("https://ih0.redbubble.net/image.454750342.2475/flat,1000x1000,075,f.u1.jpg");
+  /* background-image: url(https://www.google.com/imgres?imgurl=http%3A%2F%2Fa1star.com%2Fimages%2Fstar--background-seamless-repeating6.jpg&imgrefurl=http%3A%2F%2Fa1star.com%2Fstar-space-background-7.php&docid=3zwJak6z-UVgoM&tbnid=OTc-zuyibFWGDM%3A&vet=10ahUKEwj3hseXq97eAhVCzqQKHY8GC_EQMwiYAShGMEY..i&w=548&h=547&client=safari&bih=839&biw=1440&q=pretty%20pink%2Fpurple%20space%20backgrounds&ved=0ahUKEwj3hseXq97eAhVCzqQKHY8GC_EQMwiYAShGMEY&iact=mrc&uact=8); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

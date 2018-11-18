@@ -9,8 +9,13 @@ class CreateArticle extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.createArticle}>
-        <label className="createArticle" htmlFor="title">
+    
+    
+<p>
+       <form  className = 'createArticle'onSubmit={this.createArticle}>
+       <>Create new article</>
+      <p>
+        <label htmlFor="title">
           Title:
         </label>
         <input
@@ -18,8 +23,9 @@ class CreateArticle extends Component {
           name="title"
           value={this.state.title}
           onChange={this.handleChange}
-        />
-        <label className="createArticle" htmlFor="topic">
+        /></p>
+        <p>
+        <label htmlFor="topic">
           Topic:
         </label>
         <select value={this.state.belongs_to} onChange={this.handleSelect}>
@@ -34,23 +40,29 @@ class CreateArticle extends Component {
             cooking
           </option>
         </select>
-        <label
-          className="createArticle"
+        </p>
+        <p>
+        <label 
+          
           htmlFor="contents"
           value={this.state.body}
         >
           Contents
         </label>
-        <textarea
+        <textarea 
           type="text"
           name="body"
           onChange={this.handleChange}
           value={this.state.body}
-        />
+        /></p>
+        <p>
         <button>Create Article</button>
-      </form>
-    );
-  }
+      </p>
+      </form> 
+      </p>
+    
+    )
+  };
 
   handleSelect = event => {
     this.setState({

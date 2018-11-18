@@ -7,25 +7,23 @@ class ArticleVote extends Component {
     // orginalVoteCount: this.props.article.votes,
     voteUpClicked: false,
     voteDownClicked: false,
-    updatedVoteCount: null
+    updatedVoteCount: this.props.article.votes,
   };
   render() {
     // console.log(this.props)
     return (
       <>
-        <button
-          class="articleVote"
+        <button className='articleVote'
+          // class="articleVote"
           onClick={() => this.vote("up")}
           disabled={this.state.voteUpClicked === true}
         >
           <>
-            <i class="arrow up" />
+            <i className = {`i ${this.state.voteUpClicked? "arrow up active" :"arrow up"}`} />
           </>
         </button>
         <span className='articleData'>{`votes:${
           this.state.updatedVoteCount
-            ? this.state.updatedVoteCount
-            : this.props.article.votes
         }`}</span>
         <button
           class="articleVote"
@@ -34,7 +32,7 @@ class ArticleVote extends Component {
         >
           <>
             {" "}
-            <i class="arrow down" />
+            <i className = {`i ${this.state.voteDownClicked? "arrow down active" :"arrow down"}`} />
           </>
         </button>
       </>
@@ -46,18 +44,25 @@ class ArticleVote extends Component {
     //   voteChange:
     //     direction === "up"
     //       ? this.state.voteChange + 1
-    //       : this.state.voteChange - 1
+    //       : this.state.voteChange - 1,
+    //      voteUpClicked:direction==='up'? true:false,
+    //      voteDownClicked:direction==='down'? true:false
     // });
-    if (direction === "up") {
+    if (direction === "up" ) {
       this.setState({
         voteUpClicked: true,
-        updatedVoteCount: this.props.article.votes + 1
-      });
+        updatedVoteCount: this.state.updatedVoteCount + 1
+      })
     } else if (direction === "down") {
       this.setState({
         voteDownClicked: true,
-        updatedVoteCount: this.props.article.votes - 1
+        updatedVoteCount:this.state.updatedVoteCount  - 1
       });
+    // }else if (direction ==='up' && this.state.voteDownClicked){
+    //   this.setState({
+    //     voteUpClicked:true,
+    //     updatedVoteCount: +
+    //   })
     }
 
     // .catch(err => this.cancelVote())

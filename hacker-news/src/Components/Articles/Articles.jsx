@@ -44,6 +44,7 @@ class Articles extends Component {
 
   componentDidMount = () => {
     this.fetchArticles();
+   
   };
 
   fetchArticles = () => {
@@ -51,7 +52,7 @@ class Articles extends Component {
       console.log(this.props.topic_slug);
       api.getArticles().then(articles => {
         this.setState({
-          articles: articles.filter(article => article.commentCount > 10),
+          articles: articles.filter(article => article.votes> 1),
           loading: !true
         });
       });

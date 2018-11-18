@@ -1,9 +1,22 @@
-form {
+
+
+.auth{
+ 
   background-color: #0e0b16;
-}
-Auth {
-  background-color: #0e0b16;
+  /* font-size: 5vh;
+  font-size: 5vw; */
+  justify-content: space-evenly;
+  align-items: center;
   display: flex;
-  flex-flow: column;
-  justify-content: center;
+  flex-flow:row wrap;
+  
+}
+@media(max-width: 700px) {
+input{
+width:70px
+
+}
+}
+button{
+  background-color:#e7dfdd;
 }

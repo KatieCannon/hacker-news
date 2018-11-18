@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 import "../Title/Title.css";
 
 const Title = () => {
-  return <Link to={"/"}>NorthCoder-News</Link>;
+  return <Link className='title'to={"/"}>NEWS OF THE UNIVERSE</Link>;
 };
 
 export default Title;

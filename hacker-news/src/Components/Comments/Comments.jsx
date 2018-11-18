@@ -9,15 +9,16 @@ class Comments extends Component {
   };
   render() {
     return (
-      <div>
+      <section>
         <CommentAdder
           user={this.props.user}
           addNewComment={this.addNewComment}
           id={this.props.id}
-        />
+        /><li>
         {this.state.comments.map(comment => {
           let commentBy = comment.created_by;
           return (
+            
             <p key={comment._id}>
               <>{comment.body}</>
               <>written by:{commentBy.name}</>
@@ -36,8 +37,8 @@ class Comments extends Component {
               />
             </p>
           );
-        })}
-      </div>
+        })}</li>
+      </section>
     );
   }
 

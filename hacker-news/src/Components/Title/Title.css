@@ -1,6 +1,12 @@
-title {
-  float: left;
+.title{
+  text-decoration: none;
+  font-weight: 700;
 }
-h1 {
-  color: #e7dfdd;
+
+.title:visited, .title:active {
+  color: #a239ca;
+}
+
+.title:hover {
+  color: #c87ae7;
 }

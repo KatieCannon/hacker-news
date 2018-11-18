@@ -1,9 +1,10 @@
 img {
-  max-width: 20%;
-  max-height: 20%;
+  max-width: 80%;
+  max-height: 80%;
 }
 
 .user {
+  grid-area:span;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;

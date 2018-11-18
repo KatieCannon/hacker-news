@@ -24,9 +24,12 @@ class Navbar extends Component {
                 <Link to={`${topic.slug}`} key={topic._id} value={topic.slug}>
                   {topic.title}{" "}
                 </Link>
+               
               ))}
             </div>
+           
           </div>
+        
         </div>
       </nav>
     );

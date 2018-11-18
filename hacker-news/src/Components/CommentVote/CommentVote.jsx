@@ -16,7 +16,7 @@ class CommentVote extends Component {
         <button class ="comment"
           onClick={() => this.vote("up")}
           disabled={this.state.voteUpClicked === true}><>
-        <i class="arrow up"></i></>
+        <i i className = {`i ${this.state.voteUpClicked? "arrow up active" :"arrow up"}`}></i></>
           {/* like */}
         </button>
         <span className='commentVote'>{`votes:${this.state.updatedVoteCount
@@ -25,7 +25,7 @@ class CommentVote extends Component {
         <button class = "comment"
           onClick={() => this.vote("down")}
           disabled={this.state.voteDownClicked === true}><>
-          <i class="arrow down "></i></>
+          <i className = {`i ${this.state.voteDownClicked? "arrow down active" :"arrow down"}`}></i></>
         
         </button>
       </>

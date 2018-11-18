@@ -1,7 +1,15 @@
-.sidebar {
+/* .sidebar {
   grid-area: sidebar;
+  grid-template-areas:'a '
+  'b '
+  ;
   background-color: #0e0b16;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEj2RG5ZAlLzc2mSO4G-nJIku5hhoX_boqQ-cxBUCbZ9gg4R3B");
   background-position: top;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
 }
+
+.a{
+  grid-area: a;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMR5uNsB1Hc-gmjWVUHGK2ncRsSM6JkNHbOt8rmlalNKOmlI9Ixg')
+} */
