@@ -10,10 +10,10 @@ class Auth extends Component {
     return user ? (
       children
     ) : (
-      <form className ='auth' onSubmit={this.handleSubmit}>
+      <form className="auth" onSubmit={this.handleSubmit}>
         <label htmlFor="username" />
         <input
-        className='username'
+          className="username"
           id="username"
           type="text"
           onChange={this.handleChange}

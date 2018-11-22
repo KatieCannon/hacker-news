@@ -15,24 +15,25 @@ class Article extends Component {
     return this.state.loading ? (
       <Loader />
     ) : (
-      <div>
-        <main>
-          <p>
-            {this.state.article.title}
-            {this.state.article.body}
-            created by: {this.state.created_by.name}
+      <main>
+        <div className="article">
+          <section> {this.state.article.title}</section>
+          <section>{this.state.article.body}</section>
+          <section> created by: {this.state.created_by.name}</section>
+          <section>
             <ArticleVote
               votes={this.state.article.votes}
               article={this.state.article}
               _id={this.state.article._id}
               section={"articles"}
             />
-            Comments: {this.state.article.commentCount}
-            <br />
-          </p>
+          </section>
+          Comments: {this.state.article.commentCount}
+        </div>
+        <>
           <Comments id={this.state.article._id} user={this.props.user} />
-        </main>
-      </div>
+        </>
+      </main>
     );
   }
 
@@ -41,13 +42,23 @@ class Article extends Component {
   };
 
   fetchArticle = () => {
-    api.getArticle(this.props.id).then(article => {
-      this.setState({
-        article: article,
-        created_by: article.created_by,
-        loading: false
+    api
+      .getArticle(this.props.id)
+      .then(article => {
+        this.setState({
+          article: article,
+          created_by: article.created_by,
+          loading: false
+        });
+      })
+      .catch(error => {
+        this.props.navigate("/error", {
+          state: {
+            status: 404,
+            from: "article"
+          }
+        });
       });
-    });
   };
 }
 

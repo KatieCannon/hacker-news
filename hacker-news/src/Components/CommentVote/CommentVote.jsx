@@ -1,40 +1,52 @@
 import React, { Component } from "react";
 import * as api from "..//..//Api";
-import '../CommentVote/CommentVote.css'
+import "../CommentVote/CommentVote.css";
 
 class CommentVote extends Component {
   state = {
-    // voteChange: 0
     orginalVoteCount: this.props.comment.votes,
     voteUpClicked: false,
     voteDownClicked: false
   };
   render() {
-    // console.log(this.props)
     return (
       <>
-        <button class ="comment"
+        <button
+          className="comment"
           onClick={() => this.vote("up")}
-          disabled={this.state.voteUpClicked === true}><>
-        <i i className = {`i ${this.state.voteUpClicked? "arrow up active" :"arrow up"}`}></i></>
-          {/* like */}
+          disabled={this.state.voteUpClicked === true}
+        >
+          <>
+            <i
+              className={`i ${
+                this.state.voteUpClicked ? "arrow up active" : "arrow up"
+              }`}
+            />
+          </>
         </button>
-        <span className='commentVote'>{`votes:${this.state.updatedVoteCount
+        <span className="commentVote">{`votes:${
+          this.state.updatedVoteCount
             ? this.state.updatedVoteCount
-            : this.state.orginalVoteCount}`}</span>
-        <button class = "comment"
+            : this.state.orginalVoteCount
+        }`}</span>
+        <button
+          className="comment"
           onClick={() => this.vote("down")}
-          disabled={this.state.voteDownClicked === true}><>
-          <i className = {`i ${this.state.voteDownClicked? "arrow down active" :"arrow down"}`}></i></>
-        
+          disabled={this.state.voteDownClicked === true}
+        >
+          <>
+            <i
+              className={`i ${
+                this.state.voteDownClicked ? "arrow down active" : "arrow down"
+              }`}
+            />
+          </>
         </button>
       </>
     );
   }
   vote = direction => {
     api.vote(this.props._id, this.props.section, direction);
-
-    // 
     if (direction === "up") {
       this.setState({
         voteUpClicked: true,
@@ -45,8 +57,7 @@ class CommentVote extends Component {
         voteDownClicked: true,
         updatedVoteCount: this.state.orginalVoteCount - 1
       });
-    
-    };
+    }
   };
 }
 

@@ -2,7 +2,19 @@ label {
   color: #e7dfdd;
 }
 
-.adder {
-  width: 20%;
-  margin: auto;
+
+
+.addComment{
+  width:40%;
+  margin:auto;
+} */
+.addComment{
+  display: flex;
+  flex-flow: column wrap;
+  height:80px;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #e7dfdd;
+  
 }
+

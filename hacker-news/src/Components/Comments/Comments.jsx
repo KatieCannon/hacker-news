@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CommentVote from "../CommentVote/CommentVote";
 import * as api from "..//../Api";
 import CommentAdder from "../CommentAdder/CommentAdder";
+import "./Comments.css";
 
 class Comments extends Component {
   state = {
@@ -9,36 +10,39 @@ class Comments extends Component {
   };
   render() {
     return (
-      <section>
+      <div>
         <CommentAdder
           user={this.props.user}
           addNewComment={this.addNewComment}
           id={this.props.id}
-        /><li>
-        {this.state.comments.map(comment => {
-          let commentBy = comment.created_by;
-          return (
-            
-            <p key={comment._id}>
-              <>{comment.body}</>
-              <>written by:{commentBy.name}</>
-              <button
-                onClick={() => this.removeComment(comment)}
-                comment={comment}
-              >
-                Delete Comment
-              </button>
-              <CommentVote
-                votes={comment.votes}
-                article={this.props.article}
-                _id={comment._id}
-                section={"comments"}
-                comment={comment}
-              />
-            </p>
-          );
-        })}</li>
-      </section>
+        />
+        <ul>
+          {this.state.comments.map(comment => {
+            let commentBy = comment.created_by;
+            return (
+              <section className="comments" key={comment._id}>
+                <section>{comment.body}</section>
+                <section>written by:{commentBy.name}</section>
+                <button
+                  onClick={() => this.removeComment(comment)}
+                  comment={comment}
+                >
+                  Delete Comment
+                </button>
+                <section>
+                  <CommentVote
+                    votes={comment.votes}
+                    article={this.props.article}
+                    _id={comment._id}
+                    section={"comments"}
+                    comment={comment}
+                  />
+                </section>
+              </section>
+            );
+          })}
+        </ul>
+      </div>
     );
   }
 

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
-// import Sidebar from "./Components/Sidebar/Sidebar";
 import Articles from "./Components/Articles/Articles";
 import { Router } from "@reach/router";
 import Title from "./Components/Title/Title";
@@ -10,7 +9,7 @@ import User from "./Components/User/User";
 import Article from "./Components/Article/Article";
 import * as api from "../src/Api";
 import Greeting from "./Components/Greeting/Greeting";
-import CreateArticle from './Components/CreateArticle/CreateArticle'
+import Error from "./Components/Error/Error";
 
 class App extends Component {
   state = {
@@ -19,7 +18,6 @@ class App extends Component {
   };
   render() {
     return (
-     
       <div className="App">
         <header>
           <Title />
@@ -31,8 +29,8 @@ class App extends Component {
             <Articles path="/" user={this.state.user} />
             <Articles path="/:topic_slug" user={this.state.user} />
             <Article path="/articles/:id" user={this.state.user} />
+            <Error path="/error" error={this.state.error} />
           </Router>
-          {/* <Sidebar /> */}
         </Auth>
         {!this.state.user ? <Greeting /> : <></>}
         <footer className="footer">Copyright Katie Cannon</footer>
@@ -62,7 +60,6 @@ class App extends Component {
       topic: null
     });
   };
-  
 }
 
 export default App;

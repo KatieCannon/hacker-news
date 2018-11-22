@@ -26,7 +26,7 @@ class ArticleVote extends Component {
           this.state.updatedVoteCount
         }`}</span>
         <button
-          class="articleVote"
+          className="articleVote"
           onClick={() => this.vote("down")}
           disabled={this.state.voteDownClicked === true}
         >

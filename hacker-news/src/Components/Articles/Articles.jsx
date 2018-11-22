@@ -12,7 +12,6 @@ class Articles extends Component {
     loading: true
   };
   render() {
-    console.log(this.state.articles);
     return this.state.loading ? (
       <Loader />
     ) : (
@@ -21,7 +20,7 @@ class Articles extends Component {
         {this.state.articles.map(article => {
           const creator = article.created_by;
           return (
-            <p key={article._id}>
+            <article className='articles' key={article._id}>
               <Link
                 to={`/articles/${article._id}`}
                 className="articleTitle"
@@ -35,7 +34,7 @@ class Articles extends Component {
                 _id={article._id}
                 section={"articles"}
               />
-            </p>
+            </article>
           );
         })}
       </main>
