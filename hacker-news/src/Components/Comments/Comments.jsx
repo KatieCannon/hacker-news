@@ -21,15 +21,9 @@ class Comments extends Component {
             let commentBy = comment.created_by;
             return (
               <section className="comments" key={comment._id}>
-                <section>{comment.body}</section>
-                <section>written by:{commentBy.name}</section>
-                <button
-                  onClick={() => this.removeComment(comment)}
-                  comment={comment}
-                >
-                  Delete Comment
-                </button>
-                <section>
+                <section className="box">{comment.body}</section>
+                <section className="box">written by:{commentBy.name}</section>
+                <section className="box">
                   <CommentVote
                     votes={comment.votes}
                     article={this.props.article}
@@ -38,6 +32,12 @@ class Comments extends Component {
                     comment={comment}
                   />
                 </section>
+                <button
+                  onClick={() => this.removeComment(comment)}
+                  comment={comment}
+                >
+                  Delete Comment
+                </button>
               </section>
             );
           })}

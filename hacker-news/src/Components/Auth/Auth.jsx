@@ -19,7 +19,7 @@ class Auth extends Component {
           onChange={this.handleChange}
           value={this.state.username}
         />
-        <button>Login</button>
+        <button className="loginButton">Login</button>
       </form>
     );
   }

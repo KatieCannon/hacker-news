@@ -10,9 +10,9 @@ class CreateArticle extends Component {
   render() {
     return (
       <article className="creator">
+        Create new article
         <form className="createArticle" onSubmit={this.createArticle}>
-          <>Create new article</>
-          <>
+          <section>
             <label htmlFor="title">Title:</label>
             <input
               type="text"
@@ -20,8 +20,8 @@ class CreateArticle extends Component {
               value={this.state.title}
               onChange={this.handleChange}
             />
-          </>
-          <>
+          </section>
+          <section>
             <label htmlFor="topic">Topic:</label>
             <select value={this.state.belongs_to} onChange={this.handleSelect}>
               <option>{this.state.belongs_to}</option>
@@ -35,21 +35,21 @@ class CreateArticle extends Component {
                 cooking
               </option>
             </select>
-          </>
-          <>
+          </section>
+          <section>
             <label htmlFor="contents" value={this.state.body}>
               Contents
             </label>
+
             <textarea
               type="text"
               name="body"
               onChange={this.handleChange}
               value={this.state.body}
             />
-          </>
-          <>
-            <button>Create Article</button>
-          </>
+          </section>
+
+          <button>Create Article</button>
         </form>
       </article>
     );

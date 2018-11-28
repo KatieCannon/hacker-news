@@ -17,10 +17,13 @@ class Article extends Component {
     ) : (
       <main>
         <div className="article">
-          <section> {this.state.article.title}</section>
-          <section>{this.state.article.body}</section>
-          <section> created by: {this.state.created_by.name}</section>
-          <section>
+          <section className="box"> {this.state.article.title}</section>
+          <section className="box">{this.state.article.body}</section>
+          <section className="box">
+            {" "}
+            created by: {this.state.created_by.name}
+          </section>
+          <section className="box">
             <ArticleVote
               votes={this.state.article.votes}
               article={this.state.article}

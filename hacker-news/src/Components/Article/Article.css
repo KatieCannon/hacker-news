@@ -9,7 +9,10 @@
   background-color: rgba(0, 0, 0, 0.4);
   text-decoration-color: #e7dfdd;
 }
-Article{
-  display:flex;
+article {
+  display: flex;
   flex-flow: column nowrap;
+}
+.box {
+  padding: 5px;
 }

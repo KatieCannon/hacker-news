@@ -6,7 +6,7 @@ const User = ({ user, logout }) => {
     <div className="user">
       <img src={user.avatar_url} alt="avatar" />
       <section>{user.name}</section>
-      <button onClick={logout}>Logout</button>
+      <button className="logoutButton" onClick={logout}>Logout</button>
     </div>
   );
 };

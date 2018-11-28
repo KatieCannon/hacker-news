@@ -7,22 +7,26 @@ class ArticleVote extends Component {
     // orginalVoteCount: this.props.article.votes,
     voteUpClicked: false,
     voteDownClicked: false,
-    updatedVoteCount: this.props.article.votes,
+    updatedVoteCount: this.props.article.votes
   };
   render() {
     // console.log(this.props)
     return (
       <>
-        <button className='articleVote'
-          // class="articleVote"
+        <button
+          className="articleVote"
           onClick={() => this.vote("up")}
           disabled={this.state.voteUpClicked === true}
         >
           <>
-            <i className = {`i ${this.state.voteUpClicked? "arrow up active" :"arrow up"}`} />
+            <i
+              className={`i ${
+                this.state.voteUpClicked ? "arrow up active" : "arrow up"
+              }`}
+            />
           </>
         </button>
-        <span className='articleData'>{`votes:${
+        <span className="articleData">{`votes:${
           this.state.updatedVoteCount
         }`}</span>
         <button
@@ -32,7 +36,11 @@ class ArticleVote extends Component {
         >
           <>
             {" "}
-            <i className = {`i ${this.state.voteDownClicked? "arrow down active" :"arrow down"}`} />
+            <i
+              className={`i ${
+                this.state.voteDownClicked ? "arrow down active" : "arrow down"
+              }`}
+            />
           </>
         </button>
       </>
@@ -48,21 +56,21 @@ class ArticleVote extends Component {
     //      voteUpClicked:direction==='up'? true:false,
     //      voteDownClicked:direction==='down'? true:false
     // });
-    if (direction === "up" ) {
+    if (direction === "up") {
       this.setState({
         voteUpClicked: true,
         updatedVoteCount: this.state.updatedVoteCount + 1
-      })
+      });
     } else if (direction === "down") {
       this.setState({
         voteDownClicked: true,
-        updatedVoteCount:this.state.updatedVoteCount  - 1
+        updatedVoteCount: this.state.updatedVoteCount - 1
       });
-    // }else if (direction ==='up' && this.state.voteDownClicked){
-    //   this.setState({
-    //     voteUpClicked:true,
-    //     updatedVoteCount: +
-    //   })
+      // }else if (direction ==='up' && this.state.voteDownClicked){
+      //   this.setState({
+      //     voteUpClicked:true,
+      //     updatedVoteCount: +
+      //   })
     }
 
     // .catch(err => this.cancelVote())

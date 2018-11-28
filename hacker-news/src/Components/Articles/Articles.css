@@ -23,3 +23,10 @@
 .author {
   color: #e7dfdd;
 }
+.articleTitle:hover {
+  color: #e647d171;
+}
+.articleTitle:visited {
+  color: #a239ca;
+}
+
