@@ -11,7 +11,35 @@ class CreateArticle extends Component {
     return (
       <article className="creator">
         Create new article
-        <form className="createArticle" onSubmit={this.createArticle}>
+        <form
+        className="createArticle"
+          onSubmit={this.createArticle}>
+          <div className="titleInput">
+          <label >Title:</label>
+          <input className="titleBox" type ="text"  
+          onChange={this.handleChange}/>
+          </div>
+          <div className="topicInput">
+          <label>Topic:</label>
+          <select className="topicBox" onChange={this.handleSelect}>
+          <option>{this.state.belongs_to}</option>
+              <option name="belongs_to" value="football">
+                football
+              </option>
+              <option name="belongs_to" value="coding">
+                coding
+              </option>
+              <option name="belongs_to" value="cooking">
+                cooking
+              </option></select>
+              </div>
+              <div className="contentHeight">
+              <label>Content:</label>
+              <textarea className="contentBox" type="text" onChange={this.handleChange}/>
+              </div>
+              <button className="buttonInput">Create article</button>
+        </form>
+        {/* <form className="createArticle" onSubmit={this.createArticle}>
           <section className="newTitle">
             <label className="titler" htmlFor="title">
               Title:
@@ -58,7 +86,7 @@ class CreateArticle extends Component {
             />
           </section>
           <button className="newArticle">Create Article</button>
-        </form>
+        </form> */}
       </article>
     );
   }

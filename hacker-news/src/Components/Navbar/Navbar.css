@@ -15,7 +15,7 @@ nav {
 
 .dropdown {
   float: left;
-  overflow: hidden;
+  /* overflow: hidden; */
   
 }
 
@@ -39,7 +39,7 @@ nav {
 .navbar a:hover,
 .dropdown:hover .dropbtn {
   background-color: #a239ca;
-  /* color:white */
+
 }
 
 .dropdown-content {
