@@ -8,15 +8,15 @@ class CommentAdder extends Component {
   };
   render() {
     return (
-      <p className ='addComment'>
-        <label  htmlFor="comment">Comment as {this.props.user.username}</label>
+      <p className="addComment">
+        <label htmlFor="comment">Comment as {this.props.user.username}</label>
         <textarea
           type="text"
           name="body"
           onChange={this.handleChange}
           value={this.state.body}
         />
-        <button className = 'adder' onClick={this.handleSubmit}>
+        <button className="adder" onClick={this.handleSubmit}>
           Add Comment
         </button>
       </p>

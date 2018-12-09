@@ -12,18 +12,27 @@ class CreateArticle extends Component {
       <article className="creator">
         Create new article
         <form className="createArticle" onSubmit={this.createArticle}>
-          <section>
-            <label htmlFor="title">Title:</label>
+          <section className="newTitle">
+            <label className="titler" htmlFor="title">
+              Title:
+            </label>
             <input
+              className="inputer"
               type="text"
               name="title"
               value={this.state.title}
               onChange={this.handleChange}
             />
           </section>
-          <section>
-            <label htmlFor="topic">Topic:</label>
-            <select value={this.state.belongs_to} onChange={this.handleSelect}>
+          <section className="topicSelector">
+            <label className="topicer" htmlFor="topic">
+              Topic:
+            </label>
+            <select
+              className="topic"
+              value={this.state.belongs_to}
+              onChange={this.handleSelect}
+            >
               <option>{this.state.belongs_to}</option>
               <option name="belongs_to" value="football">
                 football
@@ -36,20 +45,19 @@ class CreateArticle extends Component {
               </option>
             </select>
           </section>
-          <section>
+          <section className="contenter">
             <label htmlFor="contents" value={this.state.body}>
               Contents
             </label>
-
             <textarea
+              className="text"
               type="text"
               name="body"
               onChange={this.handleChange}
               value={this.state.body}
             />
           </section>
-
-          <button>Create Article</button>
+          <button className="newArticle">Create Article</button>
         </form>
       </article>
     );

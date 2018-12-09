@@ -2,19 +2,12 @@ label {
   color: #e7dfdd;
 }
 
-
-
-.addComment{
-  width:40%;
-  margin:auto;
-} */
-.addComment{
-  display: flex;
-  flex-flow: column wrap;
-  height:80px;
+.addComment {
+  width: 40%;
+  margin: auto;
   justify-content: space-evenly;
   align-items: center;
-  color: #e7dfdd;
-  
 }
-
+.adder {
+  width: auto;
+}

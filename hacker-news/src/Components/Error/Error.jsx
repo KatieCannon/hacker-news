@@ -3,7 +3,6 @@ import { Link } from "@reach/router";
 import "./Error.css";
 
 const Error = props => {
-  console.log(props.location);
   return (
     <div className="message">
       <h2>{props.location.state.msg}</h2>

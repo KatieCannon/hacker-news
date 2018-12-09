@@ -33,6 +33,7 @@ class Comments extends Component {
                   />
                 </section>
                 <button
+                  className="delete"
                   onClick={() => this.removeComment(comment)}
                   comment={comment}
                 >

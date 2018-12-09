@@ -20,7 +20,6 @@ class Article extends Component {
           <section className="box"> {this.state.article.title}</section>
           <section className="box">{this.state.article.body}</section>
           <section className="box">
-            {" "}
             created by: {this.state.created_by.name}
           </section>
           <section className="box">

@@ -10,10 +10,47 @@
   text-decoration-color: #e7dfdd;
 }
 .createArticle {
-  display: flex;
-  flex-flow: column nowrap;
-  height: 200px;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
   color: #e7dfdd;
+}
+.topic {
+  background-color: white;
+  width: 21%;
+}
+.newArticle {
+  margin: 16px auto;
+  background-color: white;
+  width: 12%;
+}
+.contents {
+  margin: 16px auto;
+}
+.topicSelector {
+  margin: 16px auto;
+}
+.newTitle {
+  margin: 16px auto;
+}
+.inputer {
+  width: 20%;
+}
+label {
+  padding-right: 2%;
+  width: 5%;
+}
+.text {
+  width: auto;
+}
+.titler {
+  padding-right: 2%;
+  margin-left: auto;
+}
+.topicer {
+  padding-right: 2%;
+  margin-left: auto;
+}
+.contenter {
+  padding-right: 5%;
+  width: auto;
+  margin-left: auto;
 }

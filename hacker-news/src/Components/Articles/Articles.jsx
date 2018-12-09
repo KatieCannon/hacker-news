@@ -20,7 +20,7 @@ class Articles extends Component {
         {this.state.articles.map(article => {
           const creator = article.created_by;
           return (
-            <article className='articles' key={article._id}>
+            <article className="articles" key={article._id}>
               <Link
                 to={`/articles/${article._id}`}
                 className="articleTitle"
@@ -43,15 +43,13 @@ class Articles extends Component {
 
   componentDidMount = () => {
     this.fetchArticles();
-   
   };
 
   fetchArticles = () => {
     if (!this.props.topic_slug) {
-      console.log(this.props.topic_slug);
       api.getArticles().then(articles => {
         this.setState({
-          articles: articles.filter(article => article.votes> 1),
+          articles: articles.filter(article => article.votes > 1),
           loading: !true
         });
       });

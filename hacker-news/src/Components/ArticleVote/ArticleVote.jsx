@@ -3,14 +3,11 @@ import * as api from "../../Api";
 import "../ArticleVote/ArticleVote.css";
 class ArticleVote extends Component {
   state = {
-    // voteChange: 0,
-    // orginalVoteCount: this.props.article.votes,
     voteUpClicked: false,
     voteDownClicked: false,
     updatedVoteCount: this.props.article.votes
   };
   render() {
-    // console.log(this.props)
     return (
       <>
         <button
@@ -35,7 +32,6 @@ class ArticleVote extends Component {
           disabled={this.state.voteDownClicked === true}
         >
           <>
-            {" "}
             <i
               className={`i ${
                 this.state.voteDownClicked ? "arrow down active" : "arrow down"
@@ -48,14 +44,6 @@ class ArticleVote extends Component {
   }
   vote = direction => {
     api.vote(this.props._id, this.props.section, direction);
-    // this.setState({
-    //   voteChange:
-    //     direction === "up"
-    //       ? this.state.voteChange + 1
-    //       : this.state.voteChange - 1,
-    //      voteUpClicked:direction==='up'? true:false,
-    //      voteDownClicked:direction==='down'? true:false
-    // });
     if (direction === "up") {
       this.setState({
         voteUpClicked: true,
@@ -66,20 +54,8 @@ class ArticleVote extends Component {
         voteDownClicked: true,
         updatedVoteCount: this.state.updatedVoteCount - 1
       });
-      // }else if (direction ==='up' && this.state.voteDownClicked){
-      //   this.setState({
-      //     voteUpClicked:true,
-      //     updatedVoteCount: +
-      //   })
     }
-
-    // .catch(err => this.cancelVote())
   };
-  // cancelVote = () => {
-  //   this.setState({
-  //     voteChange: 0
-  //   });
-  // };
 }
 
 export default ArticleVote;
