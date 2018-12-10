@@ -58,13 +58,13 @@ Routes
 The following URL paths are available:
 
 PATH /
-# Homepage that displays previews of all the available articles (the first 60 words of each article)
+### Homepage that displays previews of all the available articles (the first 60 words of each article)
 PATH /:topic_slug
-# Returns all the articles for a certain topic
-# e.g: `/football`
+### Returns all the articles for a certain topic
+###e.g: `/football`
 PATH /articles/:article_id
-# Gets an individual article, displays it and it's comments
-# e.g: `/article/5bd335d7209deafb652557e3`
+### Gets an individual article, displays it and it's comments
+### e.g: `/article/5bd335d7209deafb652557e3`
 
 Deployment
 
