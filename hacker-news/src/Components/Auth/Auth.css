@@ -18,3 +18,6 @@
 .username {
   height: 20px;
 }
+.loginButton:hover{
+  background-color:#a239ca;
+}

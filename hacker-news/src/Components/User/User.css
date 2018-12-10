@@ -18,3 +18,7 @@ img {
   height:25px;
   margin-right:2%
 }
+.logoutButton:hover{
+  background-color:#a239ca;
+
+}

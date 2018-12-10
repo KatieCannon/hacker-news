@@ -15,3 +15,7 @@
 .delete {
   width: 15%;
 }
+.delete:hover{
+  background-color:#a239ca;
+
+}
