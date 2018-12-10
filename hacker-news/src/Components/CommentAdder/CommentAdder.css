@@ -1,13 +1,15 @@
 label {
   color: #e7dfdd;
 }
-
-.addComment {
-  width: 40%;
-  margin: auto;
+.addComment > * {
+  display: flex;
   justify-content: space-evenly;
+  width: 70%;
+  height: 4vh;
+  margin: auto;
   align-items: center;
 }
 .adder {
-  width: auto;
+  margin-top: 1%;
+  background-color: white;
 }

@@ -11,55 +11,23 @@ class CreateArticle extends Component {
     return (
       <article className="creator">
         Create new article
-        <form
-        className="createArticle"
-          onSubmit={this.createArticle}>
+        <form className="createArticle" onSubmit={this.createArticle}>
           <div className="titleInput">
-          <label >Title:</label>
-          <input className="titleBox" type ="text"  
-          onChange={this.handleChange}/>
-          </div>
-          <div className="topicInput">
-          <label>Topic:</label>
-          <select className="topicBox" onChange={this.handleSelect}>
-          <option>{this.state.belongs_to}</option>
-              <option name="belongs_to" value="football">
-                football
-              </option>
-              <option name="belongs_to" value="coding">
-                coding
-              </option>
-              <option name="belongs_to" value="cooking">
-                cooking
-              </option></select>
-              </div>
-              <div className="contentHeight">
-              <label>Content:</label>
-              <textarea className="contentBox" type="text" onChange={this.handleChange}/>
-              </div>
-              <button className="buttonInput">Create article</button>
-        </form>
-        {/* <form className="createArticle" onSubmit={this.createArticle}>
-          <section className="newTitle">
-            <label className="titler" htmlFor="title">
-              Title:
-            </label>
+            <label>Title:</label>
             <input
-              className="inputer"
+              className="titleBox"
               type="text"
               name="title"
               value={this.state.title}
               onChange={this.handleChange}
             />
-          </section>
-          <section className="topicSelector">
-            <label className="topicer" htmlFor="topic">
-              Topic:
-            </label>
+          </div>
+          <div className="topicInput">
+            <label>Topic:</label>
             <select
-              className="topic"
-              value={this.state.belongs_to}
+              className="topicBox"
               onChange={this.handleSelect}
+              value={this.state.belongs_to}
             >
               <option>{this.state.belongs_to}</option>
               <option name="belongs_to" value="football">
@@ -72,21 +40,19 @@ class CreateArticle extends Component {
                 cooking
               </option>
             </select>
-          </section>
-          <section className="contenter">
-            <label htmlFor="contents" value={this.state.body}>
-              Contents
-            </label>
+          </div>
+          <div className="contentHeight">
+            <label>Content:</label>
             <textarea
-              className="text"
+              className="contentBox"
               type="text"
-              name="body"
               onChange={this.handleChange}
               value={this.state.body}
+              name="body"
             />
-          </section>
-          <button className="newArticle">Create Article</button>
-        </form> */}
+          </div>
+          <button className="buttonInput">Create article</button>
+        </form>
       </article>
     );
   }

@@ -8,9 +8,10 @@ class CommentAdder extends Component {
   };
   render() {
     return (
-      <p className="addComment">
+      <form className="addComment">
         <label htmlFor="comment">Comment as {this.props.user.username}</label>
         <textarea
+        className='commenter'
           type="text"
           name="body"
           onChange={this.handleChange}
@@ -19,7 +20,7 @@ class CommentAdder extends Component {
         <button className="adder" onClick={this.handleSubmit}>
           Add Comment
         </button>
-      </p>
+      </form>
     );
   }
   handleChange = event => {
