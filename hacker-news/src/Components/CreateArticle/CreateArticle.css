@@ -36,6 +36,8 @@
 .buttonInput {
   width: 17%;
   background-color: white;
+  outline-style: none;
+  border: 0;
 }
 
 label {
@@ -44,7 +46,6 @@ label {
 .contentHeight {
   height: 150px;
 }
-.buttonInput:hover{
-  background-color:#a239ca;
-
+.buttonInput:hover {
+  background-color: #a239ca;
 }

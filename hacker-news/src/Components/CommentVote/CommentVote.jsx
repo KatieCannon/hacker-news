@@ -26,7 +26,6 @@ class CommentVote extends Component {
         </button>
         <span className="commentVote">{`votes:${
           this.state.updatedVoteCount
-            
         }`}</span>
         <button
           className="comment"
@@ -45,35 +44,33 @@ class CommentVote extends Component {
     );
   }
   vote = direction => {
-    api.vote(this.props._id, this.props.section, direction)
-    .then(data=>{
-      if (direction ==="up" && this.state.voteDownClicked === true){
+    api.vote(this.props._id, this.props.section, direction).then(data => {
+      if (direction === "up" && this.state.voteDownClicked === true) {
         this.setState({
           voteUpClicked: false,
-          updatedVoteCount: this.props.comment.votes ,
+          updatedVoteCount: this.props.comment.votes,
           voteDownClicked: false
-        })
-      }  else if(direction === "up" && this.state.voteDownClicked === false ) {
+        });
+      } else if (direction === "up" && this.state.voteDownClicked === false) {
         this.setState({
           voteUpClicked: true,
           updatedVoteCount: this.props.comment.votes + 1,
-          voteDownClicked:false
+          voteDownClicked: false
         });
-      }else if(direction ==="down" && this.state.voteUpClicked === true){
+      } else if (direction === "down" && this.state.voteUpClicked === true) {
         this.setState({
           voteUpClicked: false,
-        updatedVoteCount: this.props.comment.votes,
-        voteDownClicked: false
-        })
-      } else if
-        (direction === "down"&& this.state.voteUpClicked === false) {
-          this.setState({
-            voteDownClicked: true,
-            updatedVoteCount: this.props.comment.votes - 1,
-            voteUpClicked:false
-          });
-        }
-      })
+          updatedVoteCount: this.props.comment.votes,
+          voteDownClicked: false
+        });
+      } else if (direction === "down" && this.state.voteUpClicked === false) {
+        this.setState({
+          voteDownClicked: true,
+          updatedVoteCount: this.props.comment.votes - 1,
+          voteUpClicked: false
+        });
+      }
+    });
   };
 }
 

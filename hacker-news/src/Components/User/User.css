@@ -4,7 +4,7 @@ img {
 }
 
 .user {
-  grid-area:span;
+  grid-area: span;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
@@ -12,13 +12,14 @@ img {
   color: #e7dfdd;
   background-color: #0e0b16;
 }
-.logoutButton{
+.logoutButton {
   background-color: #e7dfdd;
-  width:50px;
-  height:25px;
-  margin-right:2%
+  width: 50px;
+  height: 25px;
+  margin-right: 2%;
+  outline-style: none;
+  border: 0;
 }
-.logoutButton:hover{
-  background-color:#a239ca;
-
+.logoutButton:hover {
+  background-color: #a239ca;
 }

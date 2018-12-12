@@ -23,7 +23,7 @@ class ArticleVote extends Component {
             />
           </>
         </button>
-        <span className="articleData">{`votes:${
+        <span className="articleData">{`  votes:  ${
           this.state.updatedVoteCount
         }`}</span>
         <button

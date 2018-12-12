@@ -26,3 +26,9 @@
   display: inline-block;
   padding: 3px;
 }
+.commentVote{
+outline-style:none;
+  border:0;
+  margin-left:2%;
+  margin-right:2%
+}

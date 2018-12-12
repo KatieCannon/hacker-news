@@ -13,11 +13,13 @@
 .loginButton {
   background-color: #e7dfdd;
   width: 50px;
-  height:25px;
+  height: 25px;
+  outline-style: none;
+  border: 0;
 }
 .username {
   height: 20px;
 }
-.loginButton:hover{
-  background-color:#a239ca;
+.loginButton:hover {
+  background-color: #a239ca;
 }

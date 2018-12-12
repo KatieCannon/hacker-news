@@ -27,3 +27,9 @@
   color: #e7dfdd;
   background-color: rgba(0, 0, 0, 0.007);
 }
+.articleVote{
+  outline-style:none;
+  border:0;
+  margin-left:2%;
+  margin-right:2%
+}
