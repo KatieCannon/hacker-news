@@ -1,15 +1,17 @@
-News of the Universe
+# News of the Universe
 
 News of the Universe is a news feed app in the style of Reddit. This repo contains the front-end of the app which has been made using React.
 
-Here is a link to the live site.
+[Here is a link to the live site.](https://github.com/KatieCannon/hacker-news)
+
 
 It builds on my hacker-news api. This API is hosted on Heroku and was set up using Express.js and a mongoDB database.
 
-Back-end live link
-Back-end repo
+[Back-end live link](https://nc-news-hack.herokuapp.com)
 
-User Stories
+[Back-end repo](https://github.com/KatieCannon/NorthCoders-news)
+
+## User Stories
 
 Users can login with just their username
 Users can logout
@@ -24,9 +26,9 @@ Users will receive error messages in the following circumstances:
 They have entered a non-existent or invalid article id
 
 
-Getting Started
+## Getting Started
 
-Installing
+### Installing
 
 Fork this repository to your own GitHub account
 Clone it to your local machine and cd into it
@@ -44,7 +46,7 @@ The dependencies that will install are:
     react-scripts: 2.1.1
 
 
-Development
+### Development
 
 Once everything is installed, you can run the app locally
 
@@ -53,26 +55,26 @@ This will start up the development server and it will open a new browser tab for
 
 To access the full site you will need to login. As there is no way to create a user I have hardcoded a user into the login input box. 
 
-Routes
+## Routes
 
 The following URL paths are available:
 
 PATH /
-### Homepage that displays previews of all the available articles (the first 60 words of each article)
+Homepage that displays previews of all the available articles (the first 60 words of each article)
 PATH /:topic_slug
-### Returns all the articles for a certain topic
-###e.g: `/football`
+Returns all the articles for a certain topic
+e.g: /football
 PATH /articles/:article_id
-### Gets an individual article, displays it and it's comments
-### e.g: `/article/5bd335d7209deafb652557e3`
+Gets an individual article, displays it and it's comments
+ e.g: /article/5bd335d7209deafb652557e3
 
-Deployment
+## Deployment
 
-My live Northcoders News app has been deployed using Netlify.
+ My live Northcoders News app has been deployed using Netlify.
 
 
 
-Authors
+## Authors
 
 Katie Cannon
 
