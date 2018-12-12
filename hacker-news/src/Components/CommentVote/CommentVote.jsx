@@ -4,7 +4,7 @@ import "../CommentVote/CommentVote.css";
 
 class CommentVote extends Component {
   state = {
-    orginalVoteCount: this.props.comment.votes,
+    updatedVoteCount: this.props.comment.votes,
     voteUpClicked: false,
     voteDownClicked: false
   };
@@ -26,8 +26,7 @@ class CommentVote extends Component {
         </button>
         <span className="commentVote">{`votes:${
           this.state.updatedVoteCount
-            ? this.state.updatedVoteCount
-            : this.state.orginalVoteCount
+            
         }`}</span>
         <button
           className="comment"
@@ -46,18 +45,35 @@ class CommentVote extends Component {
     );
   }
   vote = direction => {
-    api.vote(this.props._id, this.props.section, direction);
-    if (direction === "up") {
-      this.setState({
-        voteUpClicked: true,
-        updatedVoteCount: this.state.orginalVoteCount + 1
-      });
-    } else if (direction === "down") {
-      this.setState({
-        voteDownClicked: true,
-        updatedVoteCount: this.state.orginalVoteCount - 1
-      });
-    }
+    api.vote(this.props._id, this.props.section, direction)
+    .then(data=>{
+      if (direction ==="up" && this.state.voteDownClicked === true){
+        this.setState({
+          voteUpClicked: false,
+          updatedVoteCount: this.props.comment.votes ,
+          voteDownClicked: false
+        })
+      }  else if(direction === "up" && this.state.voteDownClicked === false ) {
+        this.setState({
+          voteUpClicked: true,
+          updatedVoteCount: this.props.comment.votes + 1,
+          voteDownClicked:false
+        });
+      }else if(direction ==="down" && this.state.voteUpClicked === true){
+        this.setState({
+          voteUpClicked: false,
+        updatedVoteCount: this.props.comment.votes,
+        voteDownClicked: false
+        })
+      } else if
+        (direction === "down"&& this.state.voteUpClicked === false) {
+          this.setState({
+            voteDownClicked: true,
+            updatedVoteCount: this.props.comment.votes - 1,
+            voteUpClicked:false
+          });
+        }
+      })
   };
 }
 

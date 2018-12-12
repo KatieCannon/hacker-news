@@ -43,19 +43,36 @@ class ArticleVote extends Component {
     );
   }
   vote = direction => {
-    api.vote(this.props._id, this.props.section, direction);
-    if (direction === "up") {
+    api.vote(this.props._id, this.props.section, direction)
+    .then(data=>{
+    if (direction ==="up" && this.state.voteDownClicked === true){
+      this.setState({
+        voteUpClicked: false,
+        updatedVoteCount: this.props.article.votes ,
+        voteDownClicked: false
+      })
+    }  else if(direction === "up" && this.state.voteDownClicked === false ) {
       this.setState({
         voteUpClicked: true,
-        updatedVoteCount: this.state.updatedVoteCount + 1
+        updatedVoteCount: this.props.article.votes + 1,
+        voteDownClicked:false
       });
-    } else if (direction === "down") {
+    }else if(direction ==="down" && this.state.voteUpClicked === true){
       this.setState({
-        voteDownClicked: true,
-        updatedVoteCount: this.state.updatedVoteCount - 1
-      });
-    }
-  };
+        voteUpClicked: false,
+      updatedVoteCount: this.props.article.votes,
+      voteDownClicked: false
+      })
+    } else if
+      (direction === "down"&& this.state.voteUpClicked === false) {
+        this.setState({
+          voteDownClicked: true,
+          updatedVoteCount: this.props.article.votes - 1,
+          voteUpClicked:false
+        });
+      }
+    })
+    };
 }
 
 export default ArticleVote;
